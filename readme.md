@@ -12,7 +12,7 @@ required modules:
 - requests
 
 running a blockchain server:
-- git clone https://github.com/rohith203/Blockchain_chatroom.git
+- git clone https://github.com/bipinsai/Asset-Management-System-using-Blockchain.git
 - cd ChatApp
 
 - ~~~~~~~~~~
