@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/chatroom.css">
+    <title>ChatRoom</title>
+</head>
+
+<body>
+<section class="msger">
+  <header class="msger-header">
+<!--     <div class="msger-header-title">
+      <i class="fas fa-comment-alt"></i> #General
+    </div> -->
+    <div class="msger-header-options">
+      <span><i class="fas fa-cog"></i></span>
+    </div>
+    <div>
+        <input type="password" placeholder="password" id="key-box" value="{{passwd}}" disabled/>
+        <button type="button" id="logout" value="{{username}}" onclick="logout()">Let Me Out</button>
+    </div>
+  </header>
+
+  <div class="container-fluid" style="background-color:   #fafafa">
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="viewall" class = "button button1" id="viewall-btn" onclick="viewall()">View All Transactions</button>
+        <h4 class = "center_align">Transactions</h4>
+        <p id="table"></p>
+        <br>
+        <br>
+      </div>
+      <div class = "col-sm-12">
+        <br>
+        <br>
+        <h4 class = "center_align">Options for selling assets.....</h4>
+        <p id="Table1"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="msg right-msg">
+    <div class="loader" id="rLoader"></div>
+  </div> -->
+
+  <div class="msger-inputarea">
+    Enter ID from the table to which you want to sell :
+    <input id="send_msg_field2" type="number" class="msger-input2" required="true" placeholder="Enter the ID of row in which you want to invest">
+    <button type="submit" id="submit-btn" class="msger-send-btn" onclick="submit_msg()">Sell Asset</button>
+  </div>
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type='text/javascript' src='../static/chatroom.js'></script>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="utf-8">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  <!-- <script src="https://d3js.org/d3.v5.js"></script> -->
+<!-- 	  <script>
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+		    var value = $(this).val().toLowerCase();
+		    $("#myTable tr").filter(function() {
+		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		    });
+		  });
+		});
+	  </script> -->
+
+	  <style type="text/css">
+	  	.center_align {
+	  		text-align: center;
+	  		align-content: center;
+	  	}
+	  	#myInput {
+		  /*background-image: url('/css/searchicon.png');*/
+		  align-content: left;
+		  background-position: 10px 10px;
+		  background-repeat: no-repeat;
+		  width: 100%;
+		  font-size: 16px;
+		  padding: 12px 20px 12px 40px;
+		  border: 1px solid #ddd;
+		  margin-bottom: 12px;
+		}
+		#myInput1 {
+		  /*background-image: url('/css/searchicon.png');*/
+		  align-content: left;
+		  background-position: 10px 10px;
+		  background-repeat: no-repeat;
+		  width: 100%;
+		  font-size: 16px;
+		  padding: 12px 20px 12px 40px;
+		  border: 1px solid #ddd;
+		  margin-bottom: 12px;
+		}
+			  	#myInput2 {
+		  /*background-image: url('/css/searchicon.png');*/
+		  align-content: left;
+		  background-position: 10px 10px;
+		  background-repeat: no-repeat;
+		  width: 100%;
+		  font-size: 16px;
+		  padding: 12px 20px 12px 40px;
+		  border: 1px solid #ddd;
+		  margin-bottom: 12px;
+		}
+					  	#myInput3 {
+		  /*background-image: url('/css/searchicon.png');*/
+		  align-content: left;
+		  background-position: 10px 10px;
+		  background-repeat: no-repeat;
+		  width: 100%;
+		  font-size: 16px;
+		  padding: 12px 20px 12px 40px;
+		  border: 1px solid #ddd;
+		  margin-bottom: 12px;
+		}
+	  	/*body {
+		  background-color: white;
+		  opacity: 0.3;
+		}*/
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  border-spacing: 5px;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: center;
+		  padding: 8px;
+		}
+
+		tr {
+		  /*background-color: #dddddd;*/	
+		}
+		.button {
+		  background-color: #bcf5bc; /* Green */
+		  border: none;
+		  color: black;
+
+		  padding: 10px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  -webkit-transition-duration: 0.4s; /* Safari */
+		  transition-duration: 0.4s;
+		}
+		.button1 {
+		  background-color: #ffc9c7; /* Green */
+		  border: none;
+		  color: black;
+		  padding: 10px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  -webkit-transition-duration: 0.4s; /* Safari */
+		  transition-duration: 0.4s;
+		}
+		.button3 {
+		  background-color: #87ceeb; /* Green */
+		  border: none;
+		  color: black;
+		  padding: 10px 20px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  -webkit-transition-duration: 0.4s; /* Safari */
+		  transition-duration: 0.4s;
+		}
+
+
+		.button2:hover {
+		  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+
+
+	</style>
+
+	<title>REPORT GENERATION</title>
+</head>
+<body>
+
+	<div class="jumbotron text-center" style="padding: 10px;background-color: #00364D; ">
+	  <h1 style="color : white; font-weight: lighter;">Admin Report</h1>
+	  <!-- <p>Resize this responsive page to see the effect!</p>  -->
+	</div>
+	<div class="container-fluid" style="background-color: 	#fafafa">
+	  <div class="row">
+	    <div class="col-sm-12">
+	    	<br>
+	      <h4 class = "center_align">Table showing Blockchain</h4>
+	      <br>
+	      <p id="Table"></p>
+	  	  <br>
+	  	  <br>
+	    </div>
+	    <div class="col-sm-12">
+	    	<h4 class = "center_align">Add Buyer's Deal</h4>
+	    	Receiver / Buyer :
+	    	<input id="myInput" type="text" style = "text-align: left; align-content: left; width: 100%;" placeholder="Name of Buyer"  required >
+	    	<br>
+	    	Receiver ID/ Buyer ID : <input id="myInput1" type="text" style = "text-align: left; align-content: left; width: 100%;" placeholder="Public Address of buyer"  required >
+	    	<br>
+	    	Type of asset : <input id="myInput2" type="text" style = "text-align: left; align-content: left; width: 100%;"placeholder="Type"  required  >
+	    	<br>
+	    	Amount : <input id="myInput3" type="number" style = "text-align: left; align-content: left; width: 100%;"placeholder="amount"  required >
+	    	<br>
+	    	<button class = "button button2" onclick="addDeal()">Add dead</button>
+	    </div>
+	    <div class="col-sm-12">
+	    	<h4 class = "center_align">View all Deals</h4>
+	    	<button class = "button button2" style="align-content: right;" onclick="allDeal()">All Buyer's ads</button>
+	    	<p id="Table1"></p>
+	    </div>
+	  </div>
+	</div>
+	
+
+<script type="text/javascript">
+
+        /* Javascript goes here */
+        const ROOT_URL = "http://" + window.location.host;
+        console.log("sending viewall request");
+	    api_url = ROOT_URL + "/blockchain";
+	    let settings = {
+	        "url": api_url,
+	        "method": "GET",
+	        // "data": JSON.stringify({"name": USERNAME})
+	        // "data": JSON.stringify({"username": USERNAME, "receiver": receiver, "amount": amount, "password": passwd})
+	    
+	    };
+	    console.log("gone")
+	    table = '';
+	    $.ajax(settings).done(function (response) {
+	    	var chain = response['chain']
+	    	var keys = ["Index", "Nonce", "Sender", "Receiver", "Type","Amount"];
+	    	 table = '<thead> <tr>';
+	    	for ( let i = 0; i< keys.length;i++ )
+	    		table+='<th>'+ keys[i] +'</th>';
+	    	table+='</tr> </thead> <tbody>';
+	    	for( let i =1 ;i< chain.length; i++ )
+	    	{
+	    		let f = chain[i];
+	    		console.log(f)
+	    		table+='<tr>'
+	            var s =  '<td>'+f['index']+'</td>'
+	            table+=s
+	            s = '<td>'+f['nonce']+'</td>'
+	            table+=s
+	            s = '<td>'+f['data'][0]['sender']+'</td>'
+	            table+=s
+	            s = '<td>'+f['data'][0]['receiver']+'</td>'
+	            table+=s
+	            s = '<td>'+f['data'][0]['type']+'</td>'
+	            table+=s
+	            s = '<td>'+f['data'][0]['amount']+'</td>'
+	            table+=s
+	        	table+='</tr>'
+
+	    	}
+	    		document.getElementById('Table').innerHTML ='<table>' + table +'</tbody> </table>';
+	    });
+
+	    function addDeal(){
+	    	var username = document.getElementById("myInput").value;
+	    	document.getElementById("myInput").value = "";
+	    	var receiver_id = document.getElementById("myInput1").value;
+	    	document.getElementById("myInput1").value = "";
+	    	var ty = document.getElementById("myInput2").value;
+	    	document.getElementById("myInput2").value = "";
+	    	var c = document.getElementById("myInput3").value;
+	    	document.getElementById("myInput3").value = 0;
+	    	if( !username || !receiver_id || !ty || c ==0 )
+	    	{
+	    		alert( "some field is invalid or empty");
+	    		return ;
+	    	}
+
+	    	var api_url = "http://" + window.location.host + "/add_to_sale";
+		    let settings = {
+		        "url": api_url,
+		        "method": "POST",
+		        "headers": {
+		          "Content-Type": "application/json"
+		        },
+		        // "data": JSON.stringify({"msg": msgText, "username": USERNAME, "password": passwd})
+		        "data": JSON.stringify({"receiver_alias": username, "receiver_id": receiver_id,"type":ty, "amount": c})
+		    
+		    };
+
+		    $.ajax(settings).done(function (answer) {
+		        // updateChatBox();
+		        // console.log("vover")
+		        // mineBlock();
+		        alert(answer)
+		        // updateChain();
+		        // console.log("update finished")
+		        // message_begin_sent = false
+		    });
+	    }
+	    function allDeal (){
+	    	var api_url = "http://" + window.location.host+ "/all_sales";
+	    	console.log(api_url)
+		    let settings = {
+	        "url": api_url,
+	        "method": "GET",
+	    	};    	
+	    	table = '';
+	    $.ajax(settings).done(function (response1) {
+	    	// var chain = response['chain']
+	    	// console.log(response1)
+	    	var keys = ["Receiver", "Receiver ID", "Type", "Amount"];
+	    	table = '<thead> <tr>';
+	    	for ( let i = 0; i< keys.length;i++ )
+	    		table+='<th>'+ keys[i] +'</th>';
+	    	table+='</tr> </thead> <tbody>';
+	    	var obkeys = Object.keys(response1["keys"])
+	    	// console.log(obkeys)
+	    	for( let j = 0 ;j < obkeys.length; j++ )
+	    	{
+	    		var list = response1["keys"][obkeys[j]];
+	    		for (i = 0 ; i < list.length ; i++)
+	    		{
+	    			var r = list[i];
+	    			table+='<tr>'
+	    			var s =  '<td>'+r['receiver_alias']+'</td>'
+	            	table+=s
+	            	s =  '<td>'+r['receiver_id']+'</td>'
+	            	table+=s
+	            	s =  '<td>'+r['type']+'</td>'
+	            	table+=s
+	            	s =  '<td>'+r['amount']+'</td>'
+	            	table+=s
+	            	table+='</tr>'
+	    		}
+	    	}
+	    	document.getElementById('Table1').innerHTML ='<table>' + table +'</tbody> </table>';
+	    	});
+	    }
+
+    </script>
+</body>
+</html>
